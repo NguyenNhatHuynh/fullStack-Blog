@@ -46,33 +46,6 @@ This full-stack blog application is built using the MERN stack (MongoDB, Express
 - 📱 **Fully Mobile-Responsive Design**
 - 🖥️ **Modern User Interface (UI)** with DARK & LIGHT theme settings
 
-## Features Include (Client side):
-
-1. User Account Creation (Optional)
-2. Google Sign In (Optional) - Client side only
-3. Post Categories
-4. Pagination with Page Numbers
-5. Commenting on Posts (Only Available to Signed-in Users)
-6. Dark and Light Theme Settings
-7. Blog Details Page with Dynamic URL (Slug)
-8. Fully Mobile-Responsive Design
-
-## Features Include (Admin Dashboard):
-
-1. Account Creation
-2. Email Verification with OTP
-3. Create Posts, Delete Posts, Enable or Disable Posts
-4. Dashboard Analytics
-5. Content and Views Analytics (7 days, 28 days, 900 days & 365 days)
-6. Ability to delete user comments on a blog post
-7. Dark and Light Theme Settings
-8. Fully Mobile-Responsive Design
-
-## Modern User Interface (UI)
-
-Classic UI with DARK & LIGHT theme settings
-## 📸 Screenshots:
-
 # Server Setup
 
 ## Environment variables
