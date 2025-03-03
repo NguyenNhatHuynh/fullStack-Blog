@@ -63,25 +63,24 @@ Classic UI with DARK & LIGHT theme settings
 ## Screenshots:-
 
 ### Dark Theme >>
-![Banner](https://res.cloudinary.com/djs3wu5bg/image/upload/v1702011737/Codewave/q3k5ayoi1v696wl3ixvf.png)
+![Banner]()
 
+![Home Page]()
 
-![Home Page](https://firebasestorage.googleapis.com/v0/b/codewave-codebase-e052b.appspot.com/o/nextjs-blog%2FHome.png?alt=media&token=b157b478-9a66-4ee9-9f94-c21b92c2e16e)
+![Pagination]()
 
-![Pagination](https://firebasestorage.googleapis.com/v0/b/codewave-codebase-e052b.appspot.com/o/nextjs-blog%2Fposts%20with%20pagination.png?alt=media&token=b39e1bc8-73b6-41dc-8a47-e0e4f03d7d21)
+![Post Detail]()
 
-![Post Detail](https://res.cloudinary.com/djs3wu5bg/image/upload/v1702011971/Codewave/bytcb7p3kpwxvu6f4h7q.png)
-
-![Sign-in Page](https://firebasestorage.googleapis.com/v0/b/codewave-codebase-e052b.appspot.com/o/nextjs-blog%2FSignin%20-%20Dark.png?alt=media&token=b3abdef1-5c0c-404c-a81b-94d558a6bb76)
+![Sign-in Page]()
 
 ### Light Theme >>
 
-![Sign-in Page](https://firebasestorage.googleapis.com/v0/b/codewave-codebase-e052b.appspot.com/o/nextjs-blog%2FSignin%20-light.png?alt=media&token=066aac30-bf42-4ee2-952e-3d089bb1dd72)
+![Sign-in Page]()
 
 
 ### Admin Dashboard >>
 
-![Admin Dashboard](https://firebasestorage.googleapis.com/v0/b/codewave-codebase-e052b.appspot.com/o/nextjs-blog%2Fadmin.png?alt=media&token=a96e398b-8d91-40ed-a938-b3714f7bccc4)
+[Admin Dashboard]()
 
 &nbsp;
 &nbsp;
@@ -176,5 +175,4 @@ First, create the environment variables file `.env` in the admin folder. The `.e
 
 ## For Support, Contact:
 
-- Email: codewavewithasante@gmail.com
-- Telegram Chat: [https://t.me/Codewave_with_asante](https://t.me/Codewave_with_asante)
+- Email: xoandev163@gmail.com
