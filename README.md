@@ -2,13 +2,9 @@
 
 Welcome to the Fullstack Blog Application documentation! This application allows users to explore a variety of blog posts with a user-friendly interface. Below is a detailed guide on how to set up and run the application.
 
-&nbsp;
-
 ## Overview
 
 This full-stack blog application is built using the MERN stack (MongoDB, Express, React, Node.js). The state management is handled using Zustand instead of Redux. Users can enjoy features like post categorization, pagination, commenting, and a dual Dark & Light theme UI. Admins have access to additional functionalities in the Admin Dashboard, including analytics on post content and views.
-
-&nbsp;
 
 ## System Requirements:
 
@@ -19,8 +15,6 @@ This full-stack blog application is built using the MERN stack (MongoDB, Express
 - Git
 - Postman (Optional)
 
-&nbsp;
-
 ## Technologies Used:
 
 1. ReactJs
@@ -29,8 +23,6 @@ This full-stack blog application is built using the MERN stack (MongoDB, Express
 4. MongoDB (Database)
 5. Tailwind CSS (for Styling)
 6. Zustand (for State Management)
-
-&nbsp;
 
 ## Features Include (Client side):
 
@@ -69,7 +61,6 @@ First, create the environment variables file `.env` in the server folder. The `.
 - AUTH_EMAIL = `your email address to send the OTP`
 - AUTH_PASSWORD = `password to your email account` (used Hotmail for email verification)
 
-&nbsp;
 
 ## Set Up MongoDB:
 
@@ -101,7 +92,6 @@ First, create the environment variables file `.env` in the server folder. The `.
 
 If configured correctly, you should see a message indicating that the server is running successfully and `Database Connected`.
 
-&nbsp;
 
 # Client Side Setup
 
@@ -118,7 +108,6 @@ First, create the environment variables file `.env` in the client folder. The `.
 3. Run `npm start` to run the app on `http://localhost:3000`.
 4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-&nbsp;
 
 # Admin Dashboard Setup
 
@@ -133,7 +122,6 @@ First, create the environment variables file `.env` in the admin folder. The `.e
 2. Run `npm i` to install the packages.
 3. Run `npm start` to run the app on `http://localhost:3000` or any other available port.
 
-&nbsp;
 
 # Security Note:
 
@@ -142,9 +130,6 @@ First, create the environment variables file `.env` in the admin folder. The `.e
 - Safeguard your environment variables by storing them securely and not exposing them unintentionally.
 
 - Ensure that only authorized personnel have access to the environment variable configurations.
-
-
-&nbsp;
 
 ## For Support, Contact:
 
