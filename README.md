@@ -6,24 +6,57 @@ Welcome to the Fullstack Blog Application documentation! This application allows
 
 This full-stack blog application is built using the MERN stack (MongoDB, Express, React, Node.js). The state management is handled using Zustand instead of Redux. Users can enjoy features like post categorization, pagination, commenting, and a dual Dark & Light theme UI. Admins have access to additional functionalities in the Admin Dashboard, including analytics on post content and views.
 
+<<<<<<< HEAD
 ## System Requirements:
+=======
+&nbsp;
 
-- Node.js version 18 or above.
-- npm version 10.2.3.
-- MongoDB Atlas
-- Text Editor or IDE
-- Git
-- Postman (Optional)
+## 🛠️ System Requirements:
+- 📦 **Node.js** version 18 or above.
+- 🔄 **npm** version 10.2.3.
+- 🗄️ **MongoDB Atlas**
+- 🖋️ **Text Editor or IDE**
+- 🛠️ **Git**
+- 🛠️ **Postman** (Optional)
+&nbsp;
+>>>>>>> bf09ae79aa6e8bde12fae5338ace244a9b2d1ecd
 
+## ⚙️ Technologies Used:
+- ⚛️ **ReactJs**
+- 🌐 **NodeJs** (Node version 18 or above)
+- 🚀 **ExpressJs**
+- 🗄️ **MongoDB** (Database)
+- 🎨 **Tailwind CSS** (for Styling)
+- 🗂️ **Zustand** (for State Management)
+
+<<<<<<< HEAD
 ## Technologies Used:
+=======
+&nbsp;
 
-1. ReactJs
-2. NodeJs (Node version 18 or above)
-3. ExpressJs
-4. MongoDB (Database)
-5. Tailwind CSS (for Styling)
-6. Zustand (for State Management)
+## ✨ Features Include (Client side):
+- 👤 **User Account Creation** (Optional)
+- 🔑 **Google Sign In** (Optional) - Client side only
+- 🗂️ **Post Categories**
+- 🔢 **Pagination** with Page Numbers
+- 💬 **Commenting on Posts** (Only Available to Signed-in Users)
+- 🌗 **Dark and Light Theme** Settings
+- 🔗 **Blog Details Page** with Dynamic URL (Slug)
+- 📱 **Fully Mobile-Responsive Design**
+>>>>>>> bf09ae79aa6e8bde12fae5338ace244a9b2d1ecd
 
+## 🖥️ Features Include (Admin Dashboard):
+- 👤 **Account Creation**
+- 📧 **Email Verification with OTP**
+- ✏️ **Create Posts, Delete Posts, Enable or Disable Posts**
+- 📊 **Dashboard Analytics**
+- 📈 **Content and Views Analytics** (7 days, 28 days, 900 days & 365 days)
+- 🗑️ **Ability to delete user comments on a blog post**
+- 🌗 **Dark and Light Theme** Settings
+- 📱 **Fully Mobile-Responsive Design**
+- 🖥️ **Modern User Interface (UI)** with DARK & LIGHT theme settings
+
+<<<<<<< HEAD
 ## Features Include (Client side):
 
 1. User Account Creation (Optional)
@@ -49,6 +82,10 @@ This full-stack blog application is built using the MERN stack (MongoDB, Express
 ## Modern User Interface (UI)
 
 Classic UI with DARK & LIGHT theme settings
+=======
+## 📸 Screenshots:
+_Add screenshots here to showcase the UI and features._
+>>>>>>> bf09ae79aa6e8bde12fae5338ace244a9b2d1ecd
 
 # Server Setup
 
