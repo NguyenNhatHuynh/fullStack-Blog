@@ -58,33 +58,6 @@ This full-stack blog application is built using the MERN stack (MongoDB, Express
 
 Classic UI with DARK & LIGHT theme settings
 
-&nbsp;
-
-## Screenshots:-
-
-### Dark Theme >>
-![Banner]()
-
-![Home Page]()
-
-![Pagination]()
-
-![Post Detail]()
-
-![Sign-in Page]()
-
-### Light Theme >>
-
-![Sign-in Page]()
-
-
-### Admin Dashboard >>
-
-[Admin Dashboard]()
-
-&nbsp;
-&nbsp;
-
 # Server Setup
 
 ## Environment variables
