@@ -13,7 +13,7 @@ const Logo = ({ type }) => {
         <span
           className={`text-3xl text-rose-500 ${type && " text-5xl font-bold"}`}
         >
-          Wave
+          XDev
         </span>
       </Link>
     </div>

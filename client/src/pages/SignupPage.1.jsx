@@ -38,7 +38,6 @@ export const SignupPage = () => {
           <div className='w-full space-y-6 flex flex-col justify-start'>
             <div className='w-full flex gap-3 md:gap-4 items-center justify-start mb-12'>
               {showFo}
-              rm}
             </div>
           </div>
         </div>
