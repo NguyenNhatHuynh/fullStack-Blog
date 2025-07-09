@@ -85,3 +85,6 @@ export const updateURL = ({ page, navigate, location }) => {
 
   return newURL;
 };
+
+
+export { uploadImage } from "./utils";
