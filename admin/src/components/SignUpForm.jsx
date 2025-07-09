@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { BiImages } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useSignUp } from "../hooks/auth-hook";
-import { uploadFile } from "../utils";
+import { uploadImage } from "../utils/utils";
 import { PasswordStrength } from "./PasswordStrength";
 import { clsx } from "clsx";
 
@@ -17,8 +17,8 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
   const [strength, setStrength] = useState(0);
   const [file, setFile] = useState("");
   const [fileURL, setFileURL] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
   const [passValue, setPassValue] = useInputState("");
-  const navigate = useNavigate();
 
   const form = useForm({
     initialValues: {
@@ -36,9 +36,19 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
 
   const handleSubmit = (values) => {
     if (!isSignin && strength < 90) return;
+    
+    // Kiểm tra nếu đang upload ảnh
+    if (isUploading) {
+      toast.warning("Please wait for image upload to complete", { 
+        duration: 3000, 
+        position: "top-center" 
+      });
+      return;
+    }
+
     setFormClose(true);
 
-    const res = mutate({
+    mutate({
       ...values,
       password: passValue,
       image: fileURL,
@@ -47,8 +57,29 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
   };
 
   useEffect(() => {
-    file && uploadFile(setFileURL, file);
-  }, [file]);
+    if (file) {
+      setIsUploading(true);
+      uploadImage(file)
+        .then((url) => {
+          setFileURL(url);
+          setIsUploading(false);
+          toast.success("Image uploaded successfully", { 
+            duration: 3000, 
+            position: "top-center" 
+          });
+        })
+        .catch((err) => {
+          setIsUploading(false);
+          setFile(""); // Reset file khi upload fail
+          const errorMessage = err.message || "Failed to upload image";
+          toast.error(errorMessage, { 
+            duration: 4000, 
+            position: "top-center" 
+          });
+          console.error(err);
+        });
+    }
+  }, [file, toast]);
 
   return (
     <form
@@ -86,12 +117,13 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
         isSignin={false}
       />
 
-      <Group className={`w-full flex  justify-between`} mt='md'>
+      <Group className={`w-full flex justify-between`} mt='md'>
         <div className={`flex flex-col items-center justify-between`}>
           <label
             className={clsx(
               "flex items-center gap-1 text-base cursor-pointer",
-              theme ? "text-gray-500" : "text-slate-700"
+              theme ? "text-gray-500" : "text-slate-700",
+              isUploading && "opacity-50 cursor-not-allowed"
             )}
             htmlFor='imgUpload'
           >
@@ -102,19 +134,33 @@ const SignUpForm = ({ toast, isSignin, setIsSignin, toggle, setFormClose }) => {
               id='imgUpload'
               data-max-size='5120'
               accept='.jpg, .png, .jpeg'
+              disabled={isUploading}
             />
             <BiImages />
-            <span>Picture</span>
+            <span>
+              {isUploading ? "Uploading..." : "Picture"}
+            </span>
           </label>
+          {fileURL && (
+            <div className="mt-2">
+              <img 
+                src={fileURL} 
+                alt="Preview" 
+                className="w-12 h-12 object-cover rounded-full"
+              />
+            </div>
+          )}
         </div>
 
         <Button
           type='submit'
           className={clsx(theme ? "bg-blue-600" : "bg-black")}
+          disabled={isUploading}
         >
-          Submit
+          {isUploading ? "Uploading..." : "Submit"}
         </Button>
       </Group>
+      
       <p className='text-sm'>
         {isSignin ? "Don't have an account?" : "Already has an account?"}
         <span

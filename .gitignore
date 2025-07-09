@@ -3,7 +3,9 @@ node_modules/
 
 # Bỏ qua file môi trường
 .env
+generateSecret.js
 
+admin/.env
 # Bỏ qua các file log
 npm-debug.log*
 yarn-debug.log*
@@ -15,3 +17,6 @@ yarn-error.log*
 # Bỏ qua output của hệ thống
 .DS_Store
 Thumbs.db
+
+
+admin/src/utils/firebase.js

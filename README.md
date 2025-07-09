@@ -131,3 +131,11 @@ First, create the environment variables file `.env` in the admin folder. The `.e
 - Email: xoandev163@gmail.com
 
 (Status Project : In Progress )
+
+
+  // "scripts": {
+  //   "start": "react-scripts start",
+  //   "build": "react-scripts build",
+  //   "test": "react-scripts test",
+  //   "eject": "react-scripts eject"
+  // },
