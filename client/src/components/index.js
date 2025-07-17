@@ -11,6 +11,7 @@ import Pagination from "./Pagination";
 import PostComments from "./PostComments";
 import PopularPosts from "./PopularPosts";
 import PopularWriters from "./PopularWriters";
+import Switch from "./Switch"; // Added import for Switch
 
 export {
   Banner,
@@ -26,4 +27,5 @@ export {
   PopularPosts,
   PopularWriters,
   PostComments,
+  Switch, // Added export for Switch
 };
