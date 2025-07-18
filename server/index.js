@@ -25,7 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("dev"));
 
-app.use(routes);
+// app.use(routes);
+app.use("/api", routes);
 
 app.use(errorMiddleware);
 
