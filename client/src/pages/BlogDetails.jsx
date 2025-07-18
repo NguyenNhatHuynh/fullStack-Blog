@@ -1,24 +1,48 @@
+
 import Markdown from "markdown-to-jsx";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 import { PopularPosts, PopularWriters, PostComments } from "../components";
 import useStore from "../store";
-import { popular, posts } from "../utils/dummyData";
 
 const BlogDetails = () => {
   const { setIsLoading } = useStore();
-
   const { id } = useParams();
-  const [post, setPost] = useState(posts[1]);
+  const [post, setPost] = useState(null);
+  const [popular, setPopular] = useState({ posts: [], writers: [] });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const fetchPost = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(`/api/posts/${id}`);
+        setPost(res.data.data);
+      } catch (err) {
+        setPost(null);
+      }
+      setLoading(false);
+    };
     if (id) {
-      // fetch post
+      fetchPost();
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   }, [id]);
 
-  if (!post)
+  useEffect(() => {
+    const fetchPopular = async () => {
+      try {
+        const res = await axios.get("/api/posts/popular");
+        setPopular(res.data.data);
+      } catch (err) {
+        setPopular({ posts: [], writers: [] });
+      }
+    };
+    fetchPopular();
+  }, []);
+
+  if (loading || !post)
     return (
       <div className='w-full h-full py-8 flex items-center justify-center'>
         <span className='text-xl text-slate-500'>Loading...</span>

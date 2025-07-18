@@ -1,17 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { Card, Pagination, PopularPosts, PopularWriters } from "../components";
-import { popular, posts } from "../utils/dummyData";
 
 const CategoriesPage = () => {
   const query = new URLSearchParams(window.location.search).get("cat");
-  const numOfPages = 4;
-  const [page, setPage] = useState(0);
+  const [posts, setPosts] = useState([]);
+  const [popular, setPopular] = useState({ posts: [], writers: [] });
+  const [page, setPage] = useState(1);
+  const [numOfPages, setNumOfPages] = useState(1);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setLoading(true);
+      try {
+        const res = await axios.get(`/api/posts?cat=${query}&page=${page}`);
+        setPosts(res.data.data);
+        setNumOfPages(res.data.numOfPage || 1);
+      } catch (err) {
+        setPosts([]);
+      }
+      setLoading(false);
+    };
+    if (query) fetchPosts();
+  }, [query, page]);
+
+  useEffect(() => {
+    const fetchPopular = async () => {
+      try {
+        const res = await axios.get("/api/posts/popular");
+        setPopular(res.data.data);
+      } catch (err) {
+        setPopular({ posts: [], writers: [] });
+      }
+    };
+    fetchPopular();
+  }, []);
 
   const handlePageChange = (val) => {
     setPage(val);
-
-    console.log(val);
   };
+
+  if (loading)
+    return (
+      <div className='w-full h-full py-8 flex items-center justify-center'>
+        <span className='text-lg text-slate-500'>Loading...</span>
+      </div>
+    );
 
   return (
     <div className='px-0 2xl:px-20'>
@@ -40,6 +75,7 @@ const CategoriesPage = () => {
                 <Pagination
                   totalPages={numOfPages}
                   onPageChange={handlePageChange}
+                  currentPage={page}
                 />
               </div>
             </>
